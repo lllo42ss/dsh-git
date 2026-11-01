@@ -1,10 +1,10 @@
-﻿# dsh-git — 车载平衡滚球运动控制系统
+# dsh-git — 车载平衡滚球运动控制系统
 
 > 2026 年全国大学生电子设计竞赛 H 题工程仓库：循线小车 + 车载平衡滚球机构 + 摄像头位置检测 + 图传记录。
 >
 > 这是一份**可评审的工程原型**：包含需求拆解、控制方案、固件骨架、视觉原型、仿真与测试、BOM 和 Git 工作流。仓库里的代码用于方案验证和答辩展示，实车参数仍需按现场标定。
 
-[![CI](https://github.com/your-name/dsh-git/actions/workflows/ci.yml/badge.svg)](https://github.com/your-name/dsh-git/actions/workflows/ci.yml)
+[![CI](https://github.com/lllo42ss/dsh-git/actions/workflows/ci.yml/badge.svg)](https://github.com/lllo42ss/dsh-git/actions/workflows/ci.yml)
 
 ## 题目要点
 
