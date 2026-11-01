@@ -1,0 +1,40 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# PlatformIO / embedded
+.pio/
+.pioenvs/
+.piolibdeps/
+firmware/.pio/
+*.elf
+*.bin
+*.hex
+*.map
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local data / secrets
+.env
+.env.*
+*.local
+secrets/
+*.pem
+*.key
+
+# Build outputs
+dist/
+build/
+*.zip
+*.bundle
+*.log
