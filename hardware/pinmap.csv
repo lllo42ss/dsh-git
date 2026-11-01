@@ -1,0 +1,32 @@
+﻿# 引脚分配（ESP32-S3 参考）
+
+| 功能 | 引脚 | 类型 | 备注 |
+|---|---|---|---|
+| 红外 L2 | GPIO1 | ADC | 最左 |
+| 红外 L1 | GPIO2 | ADC | 左 |
+| 红外 C | GPIO3 | ADC | 中 |
+| 红外 R1 | GPIO4 | ADC | 右 |
+| 红外 R2 | GPIO5 | ADC | 最右 |
+| 电机 PWM L | GPIO6 | PWM | LEDC ch0 |
+| 电机 DIR L | GPIO7 | GPIO | 方向 |
+| 电机 PWM R | GPIO8 | PWM | LEDC ch1 |
+| 电机 DIR R | GPIO9 | GPIO | 方向 |
+| 编码器 L A | GPIO10 | GPIO/PCNT | 上升沿计数 |
+| 编码器 R A | GPIO11 | GPIO/PCNT | 上升沿计数 |
+| 舵机 PWM | GPIO12 | PWM | 50 Hz |
+| OLED SCL | GPIO13 | SPI | ST7735 |
+| OLED SDA | GPIO14 | SPI | ST7735 |
+| OLED DC | GPIO15 | GPIO | |
+| OLED CS | GPIO16 | GPIO | |
+| 启动按键 | GPIO17 | GPIO | 内部上拉，低有效 |
+| 蜂鸣器 | GPIO18 | GPIO | 三极管驱动 |
+| 电池电压 | GPIO19 | ADC | 分压 1/11 |
+| 摄像头 XCLK | GPIO20 | GPIO | OV2640 |
+| 摄像头 SIOD | GPIO21 | I2C | |
+| 摄像头 SIOC | GPIO22 | I2C | |
+| 摄像头 D0-D7 | GPIO23-30 | GPIO | 按开发板摄像头座 |
+| 摄像头 PCLK | GPIO31 | GPIO | |
+| 摄像头 VSYNC | GPIO32 | GPIO | |
+| 摄像头 HREF | GPIO33 | GPIO | |
+
+> 实际引脚以所选开发板/摄像头座为准；上表是结构参考，不是硬性约束。
