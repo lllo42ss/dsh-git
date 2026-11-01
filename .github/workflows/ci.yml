@@ -1,0 +1,57 @@
+﻿name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit tests
+        run: python -B -m unittest discover -s tests -v
+      - name: Repository self-check
+        run: python -B scripts/check_repo.py
+
+  markdown-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check relative links
+        run: |
+          python -B - <<'PY'
+          from pathlib import Path
+          import re, sys
+          root = Path('.')
+          bad = []
+          for path in root.rglob('*.md'):
+              if '.git' in path.parts:
+                  continue
+              text = path.read_text(encoding='utf-8')
+              for target in re.findall(r'\]\((?!https?://|#|mailto:)([^)]+)\)', text):
+                  clean = target.split('#', 1)[0].strip()
+                  if not clean:
+                      continue
+                  candidate = (path.parent / clean).resolve()
+                  if not candidate.exists():
+                      bad.append(f'{path}: {target}')
+          if bad:
+              print('\n'.join(bad))
+              sys.exit(1)
+          print('relative links OK')
+          PY
+
+# The firmware build is intentionally local: it needs the ESP32 platform and
+# the exact board/camera pin map. Run `cd firmware && pio run` before tagging.
